@@ -1,18 +1,11 @@
-function calcular(type, value) {
-    if( type === 'action'){
+function calcular( value) {
        if (value === 'c') {
-        
-        document.getElementById('calc').value = ''//botão limpar
+        document.getElementById('calc').value = '';
        }
-       if (value === '*' || value === '/' || value === '.' || value === '+' || value === '-') {
-        document.getElementById('calc').value += value
+       else if (value === '=') {
+        document.getElementById('calc').value = eval(document.getElementById('calc').value );
        }
-       if (value === '=') {
-        document.getElementById('calc').value = eval(document.getElementById('calc').value )       
+       else{
+        document.getElementById('calc').value += value;
        }
-    
-    } else if(type === 'num'){
-      
-      document.getElementById('calc').value += value//concatenar a equação no visor
-    }
-   }
+}
