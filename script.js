@@ -1,36 +1,18 @@
-var ans = document.getElementById("Ans");
-
-function add(){
-    var n1=parseInt(document.getElementById("num1").value);
-    var n2=parseInt(document.getElementById("num2").value);
-
-    ans.innerHTML="Answer is:"+(n1+n2);
-}
-
-function sub(){
-    var n1=parseInt(document.getElementById("num1").value);
-    var n2=parseInt(document.getElementById("num2").value);
-
-    ans.innerHTML="Answer is:"+(n1-n2);
-}
-
-function mul(){
-    var n1=parseInt(document.getElementById("num1").value);
-    var n2=parseInt(document.getElementById("num2").value);
-
-    ans.innerHTML="Answer is:"+(n1*n2);
-}
-
-function div(){
-    var n1=parseInt(document.getElementById("num1").value);
-    var n2=parseInt(document.getElementById("num2").value);
-
-    ans.innerHTML="Answer is:"+(n1/n2);
-}
-
-function modulo(){
-    var n1=parseInt(document.getElementById("num1").value);
-    var n2=parseInt(document.getElementById("num2").value);
-
-    ans.innerHTML="Answer is:"+(n1%n2);
-}
+function calcular(type, value) {
+    if( type === 'action'){
+       if (value === 'c') {
+        
+        document.getElementById('calc').value = ''//botão limpar
+       }
+       if (value === '*' || value === '/' || value === '.' || value === '+' || value === '-') {
+        document.getElementById('calc').value += value
+       }
+       if (value === '=') {
+        document.getElementById('calc').value = eval(document.getElementById('calc').value )       
+       }
+    
+    } else if(type === 'num'){
+      
+      document.getElementById('calc').value += value//concatenar a equação no visor
+    }
+   }
